@@ -1,0 +1,35 @@
+{
+  "title": "Landslide Safety Guide",
+  "sections": [
+    {
+      "heading": "Before a Landslide",
+      "items": [
+        "Learn if your area is prone to landslides and sign up for alerts.",
+        "Look for warning signs: cracks in soil, tilting trees, stuck doors/windows.",
+        "Consult professionals for proper drainage and slope stabilization.",
+        "Avoid building on steep slopes or near drainage paths.",
+        "Prepare an evacuation plan and go-bag."
+      ]
+    },
+    {
+      "heading": "During a Landslide",
+      "items": [
+        "Evacuate immediately if you observe rapid water flow or earth movement.",
+        "Listen for unusual sounds: cracking trees or rumbling.",
+        "If indoors, move to the upper floor or the opposite side of the slope.",
+        "If outdoors, move away from the path of the flow to higher ground.",
+        "Be alert for flooding; landslides can block rivers and cause flash floods."
+      ]
+    },
+    {
+      "heading": "After a Landslide",
+      "items": [
+        "Stay away from the slide area; secondary slides may occur.",
+        "Check for injured and trapped persons; call for help.",
+        "Report broken utility lines to authorities.",
+        "Inspect foundations and structures for damage before re-entering.",
+        "Document damage and follow local guidance for debris removal."
+      ]
+    }
+  ]
+}

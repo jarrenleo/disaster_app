@@ -1,0 +1,35 @@
+{
+  "title": "Hurricane Safety Guide",
+  "sections": [
+    {
+      "heading": "Before a Hurricane",
+      "items": [
+        "Know your evacuation zone and routes; plan where to go.",
+        "Assemble a 3-day supply of water, food, meds, and essentials.",
+        "Protect windows with shutters or plywood; secure outdoor items.",
+        "Fuel vehicles and charge devices; have backup power if possible.",
+        "Review insurance coverage and store documents securely."
+      ]
+    },
+    {
+      "heading": "During a Hurricane",
+      "items": [
+        "Follow evacuation orders; never drive through floodwaters.",
+        "Stay indoors away from windows; shelter in an interior room.",
+        "Monitor official updates via battery-powered radio.",
+        "Avoid using candles due to fire risk; use flashlights instead.",
+        "Be prepared for power outages and stay off roads."
+      ]
+    },
+    {
+      "heading": "After a Hurricane",
+      "items": [
+        "Return only when officials say it’s safe.",
+        "Beware of downed lines, floodwater, and structural damage.",
+        "Use generators outdoors, 20+ feet from doors and windows.",
+        "Photograph damage for claims; beware of scams.",
+        "Boil water advisories may be in effect; follow guidance."
+      ]
+    }
+  ]
+}

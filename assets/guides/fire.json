@@ -1,0 +1,35 @@
+{
+  "title": "Fire Safety Guide",
+  "sections": [
+    {
+      "heading": "Before a Fire",
+      "items": [
+        "Install smoke alarms on every level and in sleeping areas; test monthly.",
+        "Create and practice a home fire escape plan with two exits from each room.",
+        "Keep fire extinguishers accessible and know how to use them (PASS method).",
+        "Store flammables safely; don’t overload electrical outlets.",
+        "Maintain clear exits and keep space heaters at least 3 feet from anything flammable."
+      ]
+    },
+    {
+      "heading": "During a Fire",
+      "items": [
+        "Get out, stay out, and call for help. Do not re-enter.",
+        "If smoke is present, stay low and crawl under the smoke.",
+        "Feel doors for heat before opening; use alternate exits if hot.",
+        "Stop, drop, and roll if your clothes catch fire.",
+        "Meet at a designated safe location outside."
+      ]
+    },
+    {
+      "heading": "After a Fire",
+      "items": [
+        "Do not enter your home until authorities say it’s safe.",
+        "Beware of structural damage, hot spots, and electrical hazards.",
+        "Contact your insurance company and begin documenting losses.",
+        "Discard food and water exposed to heat, smoke, or soot.",
+        "Seek support for emotional recovery; fires can be traumatic."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "title": "Earthquake Safety Guide",
+  "sections": [
+    {
+      "heading": "Before an Earthquake",
+      "items": [
+        "Secure heavy furniture, water heaters, and appliances to walls.",
+        "Store breakables in low cabinets with latches.",
+        "Prepare an emergency kit and family communication plan.",
+        "Know how to turn off gas, electricity, and water if instructed.",
+        "Practice Drop, Cover, and Hold On drills."
+      ]
+    },
+    {
+      "heading": "During an Earthquake",
+      "items": [
+        "Drop, Cover, and Hold On: get under sturdy furniture, protect your head and neck.",
+        "Stay indoors until shaking stops and it’s safe to exit.",
+        "If outdoors, move away from buildings, streetlights, and utility wires.",
+        "If in a vehicle, pull over to a clear area and stop.",
+        "Expect aftershocks; be ready to Drop, Cover, and Hold On again."
+      ]
+    },
+    {
+      "heading": "After an Earthquake",
+      "items": [
+        "Check for injuries; apply first aid and call for help if needed.",
+        "Inspect for gas leaks, damaged wiring, and water line breaks.",
+        "Use text messages or social media to communicate; keep phone lines clear.",
+        "Listen to authorities for updates and potential tsunami warnings.",
+        "Be cautious of debris, broken glass, and unstable structures."
+      ]
+    }
+  ]
+}

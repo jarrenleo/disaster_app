@@ -1,0 +1,35 @@
+{
+  "title": "Tornado Safety Guide",
+  "sections": [
+    {
+      "heading": "Before a Tornado",
+      "items": [
+        "Identify a safe room: basement or interior small room on the lowest level.",
+        "Prepare an emergency kit and sturdy shoes.",
+        "Know local warning systems and alerts; have a NOAA weather radio.",
+        "Secure outdoor items that can become projectiles.",
+        "Review sheltering plans for home, school, and work."
+      ]
+    },
+    {
+      "heading": "During a Tornado",
+      "items": [
+        "Go to your safe room immediately; cover your head and neck.",
+        "Avoid windows; put as many walls between you and the outside as possible.",
+        "If in a mobile home or vehicle, seek a sturdy building or low-lying area.",
+        "Do not try to outrun a tornado in a vehicle; seek shelter.",
+        "Wear a helmet if available to reduce head injury."
+      ]
+    },
+    {
+      "heading": "After a Tornado",
+      "items": [
+        "Stay clear of downed power lines and damaged buildings.",
+        "Render aid to the injured and call 911 as needed.",
+        "Check for gas leaks; do not use open flames.",
+        "Listen for official updates; avoid affected areas unless assisting.",
+        "Document damage for insurance."
+      ]
+    }
+  ]
+}

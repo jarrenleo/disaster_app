@@ -69,3 +69,38 @@ Or scan the QR code with the [Expo Go](https://expo.dev/go) app to test on your 
 ---
 
 If this template helps you move faster, consider giving [React Native Reusables](https://github.com/founded-labs/react-native-reusables) a ⭐ on GitHub. It helps a lot!
+
+## Supabase Setup
+
+This app is now configured to use Supabase. To finish setup:
+
+1. Create a Supabase project at `https://database.new` and copy:
+   - Project URL
+   - Anonymous (public) API key
+2. Copy `env.example` to `.env` or `.env.local` and set:
+
+   ```
+   EXPO_PUBLIC_SUPABASE_URL=your-url
+   EXPO_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+   ```
+
+3. Restart the dev server after changing env vars.
+
+### Using the client
+
+Import the client from `lib/supabase` anywhere in the app:
+
+```
+import { supabase } from '@/lib/supabase';
+
+async function loadData() {
+  const { data, error } = await supabase.from('your_table').select('*');
+  if (error) throw error;
+  return data;
+}
+```
+
+Notes:
+
+- Clerk remains the auth provider for UI/session. Supabase can be used for database, storage, and RPC.
+- If you want to migrate auth to Supabase later (email magic links, OAuth, etc.), set a redirect URL matching your Expo scheme (`disaster_app://`) in the Supabase auth provider settings, then replace Clerk flows with Supabase Auth helpers.

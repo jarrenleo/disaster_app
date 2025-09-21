@@ -1,0 +1,35 @@
+{
+  "title": "Flood Safety Guide",
+  "sections": [
+    {
+      "heading": "Before a Flood",
+      "items": [
+        "Know your local flood risk and evacuation routes.",
+        "Prepare an emergency kit with water, food, medications, flashlight, and batteries.",
+        "Store important documents in a waterproof container and back them up digitally.",
+        "Move valuables to higher levels and elevate electrical appliances if possible.",
+        "Purchase flood insurance; standard homeowners insurance usually doesn’t cover floods."
+      ]
+    },
+    {
+      "heading": "During a Flood",
+      "items": [
+        "Evacuate immediately if told to do so. Follow official routes.",
+        "Never walk, swim, or drive through floodwaters. Turn Around, Don’t Drown.",
+        "Avoid bridges over fast-moving water; they can be washed out.",
+        "Stay off electrical equipment if you are wet or standing in water.",
+        "If trapped, move to the highest level. Only go to the roof if necessary and signal for help."
+      ]
+    },
+    {
+      "heading": "After a Flood",
+      "items": [
+        "Return home only when authorities say it’s safe.",
+        "Avoid floodwater; it may be contaminated and hide hazards.",
+        "Turn off electricity at the main breaker if safe to do so.",
+        "Wear protective gear (boots, gloves, mask) when cleaning up.",
+        "Document damage with photos for insurance claims."
+      ]
+    }
+  ]
+}
