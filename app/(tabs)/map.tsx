@@ -1,13 +1,13 @@
-import { Stack } from 'expo-router';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { View, Alert, useWindowDimensions } from 'react-native';
-import { useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
-import MapView, { type Region } from 'react-native-maps';
+import { Stack } from 'expo-router';
 import * as Location from 'expo-location';
-import supabase from '@/lib/supabase';
-import { BottomSheetModal } from '@gorhom/bottom-sheet';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useUser } from '@clerk/clerk-expo';
+import MapView, { type Region } from 'react-native-maps';
+import { useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
+import supabase from '@/lib/supabase';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { BottomSheetModal } from '@gorhom/bottom-sheet';
 import { MapMarkers } from '@/components/map/MapMarkers';
 import { ReportsListSheet } from '@/components/map/ReportsListSheet';
 import { FloatingMapActions } from '@/components/map/FloatingMapActions';
@@ -99,11 +99,16 @@ export default function MapScreen() {
     return reports
       .map((r) => {
         if (!r.coordinates) return null;
+
         const parts = r.coordinates.split(',');
+
         if (parts.length !== 2) return null;
+
         const latitude = parseFloat(parts[0]);
         const longitude = parseFloat(parts[1]);
+
         if (isNaN(latitude) || isNaN(longitude)) return null;
+
         return {
           id: r.id,
           latitude,
@@ -119,7 +124,9 @@ export default function MapScreen() {
 
   const nearbyReportIds = useMemo<Set<number>>(() => {
     if (!userCoords) return new Set<number>();
+
     const result = new Set<number>();
+
     for (const marker of reportMarkers) {
       const distanceKm = calculateGreatCircleDistanceKM(
         userCoords.latitude,
@@ -127,31 +134,30 @@ export default function MapScreen() {
         marker.latitude,
         marker.longitude
       );
-      if (distanceKm < 5) {
-        result.add(marker.id);
-      }
+      if (distanceKm < 5) result.add(marker.id);
     }
+
     return result;
   }, [userCoords, reportMarkers]);
 
   const filteredReportMarkers = useMemo<ReportMarker[]>(() => {
     let list = reportMarkers;
-    const q = searchQuery.trim().toLowerCase();
-    if (q) {
+    const query = searchQuery.trim().toLowerCase();
+
+    if (query)
       list = list.filter((m) => {
         const type = m.disaster_type?.toLowerCase() ?? '';
         const loc = (m.location ?? '').toLowerCase();
-        return type.includes(q) || loc.includes(q);
+        return type.includes(query) || loc.includes(query);
       });
-    }
-    if (nearOnly && userCoords) {
-      list = list.filter((m) => nearbyReportIds.has(m.id));
-    }
+
+    if (nearOnly && userCoords) list = list.filter((m) => nearbyReportIds.has(m.id));
+
     return list;
   }, [reportMarkers, searchQuery, nearOnly, userCoords, nearbyReportIds]);
 
-  const typeEmoji = (t: string): string => {
-    switch (t) {
+  function typeEmoji(type: string): string {
+    switch (type) {
       case 'Flood':
         return '🌊';
       case 'Fire':
@@ -167,10 +173,11 @@ export default function MapScreen() {
       default:
         return '⚠️';
     }
-  };
+  }
 
-  const panTo = (lat: number, lng: number) => {
+  function panTo(lat: number, lng: number): void {
     if (!mapRef.current) return;
+
     mapRef.current.animateCamera(
       {
         center: { latitude: lat, longitude: lng },
@@ -178,7 +185,7 @@ export default function MapScreen() {
       },
       { duration: 600 }
     );
-  };
+  }
 
   useEffect(() => {
     let isMounted = true;
@@ -243,14 +250,11 @@ export default function MapScreen() {
       }
     };
 
-    if (userCountry) {
-      fetchReportsForCountry(userCountry);
-    }
+    if (userCountry) fetchReportsForCountry(userCountry);
   }, [userCountry]);
 
-  const refreshReports = async () => {
+  async function refreshReports(): Promise<void> {
     try {
-      // Try to update country if we can get a fresh location; fall back to existing
       let country = userCountry;
       try {
         const current = await Location.getCurrentPositionAsync({});
@@ -280,9 +284,9 @@ export default function MapScreen() {
     } finally {
       setReportsLoading(false);
     }
-  };
+  }
 
-  const centerOnUser = async () => {
+  async function centerOnUser(): Promise<void> {
     if (!hasPermission || !mapRef.current) return;
     const current = await Location.getCurrentPositionAsync({});
     setUserCoords({ latitude: current.coords.latitude, longitude: current.coords.longitude });
@@ -293,9 +297,9 @@ export default function MapScreen() {
       },
       zoom: 16,
     });
-  };
+  }
 
-  const handleSubmitReport = async () => {
+  async function handleSubmitReport(): Promise<void> {
     try {
       if (!hasPermission) {
         const { status } = await Location.requestForegroundPermissionsAsync();
@@ -346,7 +350,7 @@ export default function MapScreen() {
     } finally {
       setSubmitting(false);
     }
-  };
+  }
 
   return (
     <>

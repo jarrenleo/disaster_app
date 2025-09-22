@@ -1,12 +1,12 @@
 import { View, Text, FlatList, Dimensions } from 'react-native';
-import { Button } from '@/components/ui/button';
+import { router } from 'expo-router';
+import { Image } from 'expo-image';
 import { useUser, useAuth } from '@clerk/clerk-expo';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Image } from 'expo-image';
-import { Icon } from '@/components/ui/icon';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Icon } from '@/components/ui/icon';
 import { Separator } from '@/components/ui/separator';
-
 import {
   ShieldHalfIcon,
   User2Icon,
@@ -14,7 +14,6 @@ import {
   LogOutIcon,
   ChevronRightIcon,
 } from 'lucide-react-native';
-import { router } from 'expo-router';
 
 export default function ProfileScreen() {
   const insets = useSafeAreaInsets();
@@ -76,7 +75,7 @@ export default function ProfileScreen() {
   ];
 
   return (
-    <View className="px-6" style={{ paddingTop: insets.top + 16 }}>
+    <View className="px-6" style={{ paddingTop: insets.top }}>
       <Text className="mb-6 text-3xl font-bold text-foreground">Profile</Text>
 
       <View className="mb-6 flex-col items-center">

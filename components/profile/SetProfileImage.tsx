@@ -27,11 +27,16 @@ export default function SetProfileImage() {
       if (!asset.uri) return;
 
       setIsUploading(true);
-      const response = await fetch(asset.uri);
-      const blob = await response.blob();
 
       if (!user) return;
-      await user.setProfileImage({ file: blob });
+
+      const file = {
+        uri: asset.uri,
+        name: asset.fileName ?? 'profile.jpg',
+        type: asset.mimeType ?? 'image/jpeg',
+      } as const;
+
+      await user.setProfileImage({ file });
       await user.reload();
     } catch (error) {
       console.error(error);

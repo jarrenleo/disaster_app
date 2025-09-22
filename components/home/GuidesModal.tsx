@@ -45,7 +45,9 @@ export function GuidesModal({ visible, onClose }: GuidesModalProps) {
       visible={visible}
       onRequestClose={onClose}
       presentationStyle="fullScreen">
-      <View className="flex-1 bg-background" style={{ paddingBottom: insets.bottom }}>
+      <View
+        className="flex-1 bg-background"
+        style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
         <View className="flex-row items-center justify-between px-6 pb-2 pt-6">
           <Pressable onPress={onClose} role="button">
             <Icon as={XIcon} size={24} className="text-muted-foreground" />

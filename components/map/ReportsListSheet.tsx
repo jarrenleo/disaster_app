@@ -1,11 +1,7 @@
 import { useRef, useMemo } from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import BottomSheet, {
-  BottomSheetBackdrop,
-  BottomSheetFlatList,
-  BottomSheetView,
-} from '@gorhom/bottom-sheet';
+import BottomSheet, { BottomSheetFlatList, BottomSheetView } from '@gorhom/bottom-sheet';
 import type { BottomSheetBackgroundProps } from '@gorhom/bottom-sheet';
 import { Button } from '@/components/ui/button';
 import { Text as UIText } from '@/components/ui/text';
@@ -57,17 +53,6 @@ export function ReportsListSheet({
   const insets = useSafeAreaInsets();
   const listSnapPoints = useMemo(() => [70, '65%'], []);
   const listSheetRef = useRef<BottomSheet | null>(null);
-  // const renderBackdrop = useMemo(
-  //   () => (props: any) => (
-  //     <BottomSheetBackdrop
-  //       {...props}
-  //       appearsOnIndex={0}
-  //       disappearsOnIndex={-1}
-  //       pressBehavior="close"
-  //     />
-  //   ),
-  //   []
-  // );
 
   return (
     <BottomSheet
@@ -101,10 +86,6 @@ export function ReportsListSheet({
           <View className="items-center justify-center py-6">
             <UIText className="text-red-500">{error}</UIText>
           </View>
-        ) : markers.length === 0 ? (
-          <View className="items-center justify-center py-6">
-            <UIText className="text-muted-foreground">No active reports</UIText>
-          </View>
         ) : (
           <BottomSheetFlatList
             data={markers}
@@ -133,6 +114,13 @@ export function ReportsListSheet({
                     </UIText>
                   </Button>
                 </View>
+              </View>
+            }
+            ListEmptyComponent={
+              <View className="items-center justify-center py-6">
+                <UIText className="text-muted-foreground">
+                  {searchQuery.trim() ? `No results for "${searchQuery}"` : 'No active reports'}
+                </UIText>
               </View>
             }
             renderItem={({ item }: { item: ReportMarker }) => (
@@ -168,7 +156,7 @@ export function ReportsListSheet({
                       </UIText>
                       {nearbyReportIds.has(item.id) ? (
                         <View className="rounded-sm bg-destructive px-2 py-0.5">
-                          <UIText className="text-[10px] font-extrabold tracking-wider text-foreground">
+                          <UIText className="text-[10px] font-extrabold tracking-wider text-white">
                             NEAR YOU
                           </UIText>
                         </View>

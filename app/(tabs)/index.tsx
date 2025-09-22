@@ -1,14 +1,14 @@
-import { Text } from '@/components/ui/text';
-import { Stack } from 'expo-router';
-import { View, Alert, Pressable } from 'react-native';
-import { Icon } from '@/components/ui/icon';
-import { useAuth } from '@clerk/clerk-expo';
 import { useEffect, useState } from 'react';
+import { View, Pressable } from 'react-native';
+import { Stack } from 'expo-router';
+import { useAuth } from '@clerk/clerk-expo';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { TrophyIcon, BookOpenIcon } from 'lucide-react-native';
 import { ChallengesModal } from '@/components/home/ChallengesModal';
 import { GuidesModal } from '@/components/home/GuidesModal';
 import { PointsCard } from '@/components/home/PointsCard';
+import { Text } from '@/components/ui/text';
+import { Icon } from '@/components/ui/icon';
+import { TrophyIcon, BookOpenIcon } from 'lucide-react-native';
 
 export default function HomeTabScreen() {
   const insets = useSafeAreaInsets();
@@ -17,10 +17,6 @@ export default function HomeTabScreen() {
   useEffect(() => {
     void userId;
   }, [userId]);
-
-  function onRedeemPress() {
-    Alert.alert('Redeem', 'Redemption flow coming soon.');
-  }
 
   const [showChallenges, setShowChallenges] = useState(false);
   const [showGuides, setShowGuides] = useState(false);
@@ -36,7 +32,7 @@ export default function HomeTabScreen() {
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
-      <View className="px-6" style={{ paddingTop: insets.top + 16 }}>
+      <View className="px-6" style={{ paddingTop: insets.top }}>
         <Text className="mb-6 text-3xl font-bold text-foreground">Home</Text>
         <PointsCard />
         <View className="mt-8">

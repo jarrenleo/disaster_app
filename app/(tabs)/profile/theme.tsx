@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native';
+import { router } from 'expo-router';
+import { useColorScheme } from 'nativewind';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/ui/icon';
 import { ArrowLeftIcon } from 'lucide-react-native';
-import { router } from 'expo-router';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useColorScheme } from 'nativewind';
 
 export default function ThemeScreen() {
   const insets = useSafeAreaInsets();
@@ -12,7 +12,7 @@ export default function ThemeScreen() {
 
   const selected: 'system' | 'light' | 'dark' = (colorScheme as any) ?? 'system';
   return (
-    <View className="flex-1 px-6" style={{ paddingTop: insets.top + 16 }}>
+    <View className="flex-1 px-6" style={{ paddingTop: insets.top }}>
       <Button
         variant="ghost"
         onPress={() => router.back()}

@@ -1,18 +1,17 @@
-import 'react-native-url-polyfill/auto';
-import '@/global.css';
-
-import { NAV_THEME } from '@/lib/theme';
+import { useEffect } from 'react';
+import { Stack } from 'expo-router';
 import { ClerkProvider, useAuth } from '@clerk/clerk-expo';
+import * as SplashScreen from 'expo-splash-screen';
+import { StatusBar } from 'expo-status-bar';
 import { tokenCache } from '@clerk/clerk-expo/token-cache';
+import { useColorScheme } from 'nativewind';
+import { NAV_THEME } from '@/lib/theme';
 import { ThemeProvider } from '@react-navigation/native';
 import { PortalHost } from '@rn-primitives/portal';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { StatusBar } from 'expo-status-bar';
-import { useColorScheme } from 'nativewind';
-import { useEffect } from 'react';
+import 'react-native-url-polyfill/auto';
+import '@/global.css';
 
 export {
   // Catch any errors thrown by the Layout component.

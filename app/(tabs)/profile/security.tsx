@@ -12,7 +12,7 @@ export default function SecurityScreen() {
   const insets = useSafeAreaInsets();
 
   return (
-    <View className="px-6" style={{ paddingTop: insets.top + 16 }}>
+    <View className="px-6" style={{ paddingTop: insets.top }}>
       <Button
         variant="ghost"
         onPress={() => router.back()}

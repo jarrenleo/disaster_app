@@ -129,7 +129,9 @@ export function ChallengesModal({ visible, onClose }: ChallengesModalProps) {
       visible={visible}
       onRequestClose={onClose}
       presentationStyle="fullScreen">
-      <View className="flex-1 bg-background">
+      <View
+        className="flex-1 bg-background"
+        style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
         <View className="flex-row items-center justify-between px-6 pb-2 pt-6">
           <Pressable onPress={showQuiz ? () => setShowQuiz(false) : onClose} role="button">
             <Icon as={XIcon} size={24} className="text-muted-foreground" />
@@ -194,7 +196,7 @@ export function ChallengesModal({ visible, onClose }: ChallengesModalProps) {
         )}
 
         {!showQuiz ? (
-          <View className="mt-auto px-6 pb-6" style={{ paddingBottom: insets.bottom + 16 }}>
+          <View className="mt-auto px-6 pb-6">
             <Button onPress={onStartChallenge} disabled={!canStartChallenge || loading}>
               <Text>Start Challenge</Text>
             </Button>
